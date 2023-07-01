@@ -2,7 +2,10 @@
     "builds": [
         {
             "src": "helloworld/wsgi.py",
-            "use": "@vercel/python"
+            "use": "@vercel/python",
+            "config": {
+                "maxLambdaSize": "15mb"
+            }
         }
     ],
     "routes": [
@@ -10,5 +13,13 @@
             "src": "/(.*)",
             "dest": "helloworld/wsgi.py"
         }
-    ]
+    ],
+    "projectSettings": {
+        "buildCommand": null,
+        "devCommand": null,
+        "framework": "other",
+        "commandForIgnoringBuildStep": "",
+        "installCommand": null,
+        "outputDirectory": null
+    }
 }
